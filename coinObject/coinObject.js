@@ -1,19 +1,3 @@
-/*
-class Coin {
-  constructor(state, flip, toString, toHTML){
-    this.state = 0,
-    this.flip = flip,
-    this.toString = toString,
-    this.toHTML = toHTML
-  }
- fliping(){
-   const random = (num) =>Math.floor(Math.random()*num)
-  console.log(random(2));
-  }
-}
-*/
-
-//const coin = new Coin( ' ',this.fliping )
 const body = document.getElementById("body");
 
 const coin = {
@@ -27,7 +11,7 @@ const coin = {
     toString: function (state) {
       let chois = ""
       if(this.state == 0){
-        chois = "heades"
+        chois = "Heades"
       }if(this.state == 1){
         chois = "Tails"
       }
@@ -37,10 +21,10 @@ const coin = {
       // Se o valor de "state" for 1, retorne "Tails"
     },
 
-    toHTML: function (chois) {
+    toHTML: function (toString) {
       const image = document.createElement("img");
-      image.src = `./assets/img/Heads.png`
-      image.alt = `./assets/img/Tails.jpg` 
+      image.src = `./assets/img/${coin.toString()}.png`
+      console.log(coin.toString())
       body.appendChild(image)
       // Colocar uma imagem correspondente a essa valor.
       // image.src = "./CAMINHO/IMAGEM.JPEG"
@@ -58,17 +42,11 @@ const coin = {
       text.innerHTML= results 
 
       let final = results.toString()
-      body.appendChild(text)
+      body.appendChild(text);
+    //  display20Images();
     }
  //   console.log(results)
-    return coin.flip()
-   // display20Flips();
-    // Use um loop para arremessar a moeda 20 vezes.
-    // Depois que o seu loop terminar, exiba o resultado na página no formato de TEXTO.
-    // Além de exibir os resultados na página, não esqueça
-    // de retornar o valor de "results".
-    // Caso esqueça de retornar "results", sua função não
-    // irá passar nos testes.
+    return results
 }
 //display20Flips();
 
@@ -76,12 +54,8 @@ function display20Images() {
   const results = [];
   for(let i = 0; i < 20; i++){
     coin.toHTML();
+    console.log(coin.flip())
+    console.log(coin.toString())
   }
-  return coin.toHTML()
-  // Use um loop para arremessar a moeda 20 vezes.
-  // Depois que o seu loop terminar, exiba o resultado na página no formato de IMAGEM.
-  // Além de exibir os resultados na página, não esqueça
-  // de retornar o valor de "results".
-  // Caso esqueça de retornar "results", sua função não
-  // irá passar nos testes.
+  return results
 }
