@@ -1,4 +1,24 @@
 const body = document.getElementById("body");
+const monedas = document.createElement("section");
+const textos = document.createElement("section");
+const control = document.createElement("navBar");
+const but1 = document.createElement("button")
+const but2 = document.createElement("button")
+control.appendChild(but1);
+control.appendChild(but2);
+body.appendChild(control)
+body.appendChild(monedas)
+body.appendChild(textos)
+monedas.classList.add("monedas");
+textos.classList.add("textos");
+but1.classList.add("but_monedas")
+but2.classList.add("but_textos")
+but1.id="gerMonedas";
+but2.id="gerTextos";
+but1.innerText="Flips"
+but2.innerText="Pics"
+const accion1 = document.getElementById("gerMonedas");
+const accion2 = document.getElementById("gerTextos");
 
 const coin = {
     state: 0,
@@ -23,21 +43,25 @@ const coin = {
     toHTML: function (toString) {
       const image = document.createElement("img");
       image.src = `./assets/img/${coin.toString()}.png`
-      body.appendChild(image)
+      textos.appendChild(image)
       return this.image;
     },
   };
 
   function display20Flips() {
     const results = [];
-    const texto =["Heads", "Tails"]
+    const texto =[" Heads", " Tails"]
     const text = document.createElement("p")
+    coin.toString()
     for(let i = 0; i < 20; i++){
     results.push(texto[`${coin.flip()}`])
+   // results.push(coin.toString())
+   // results.push(coin.toString())
 
+    //console.log(coin.toString())
       let final = results.toString()
       text.innerHTML= final 
-      body.appendChild(text);
+      monedas.appendChild(text);
     }
     return results
 }
@@ -52,3 +76,5 @@ function display20Images() {
   }
   return results
 }
+accion1.addEventListener("click", display20Flips);
+accion2.addEventListener("click", display20Images);
