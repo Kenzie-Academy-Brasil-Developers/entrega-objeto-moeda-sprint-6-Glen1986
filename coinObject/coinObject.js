@@ -76,5 +76,8 @@ function display20Images() {
   }
   return results
 }
-accion1.addEventListener("click", display20Flips);
+accion1.addEventListener("click",function(event){
+  display20Flips()
+  console.log(event);
+});
 accion2.addEventListener("click", display20Images);
