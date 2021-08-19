@@ -49,12 +49,20 @@ const coin = {
     },
   };
 
-  function display20Flips(state) {
+  function display20Flips() {
     const results = [];
+    const texto =["Heads", "Tails"]
+    const text = document.createElement("p")
     for(let i = 0; i < 20; i++){
-      result.push(state)
+    results.push(texto[`${coin.flip()}`])
+      text.innerHTML= results 
+
+      let final = results.toString()
+      body.appendChild(text)
     }
-    display20Flips();
+ //   console.log(results)
+    return coin.flip()
+   // display20Flips();
     // Use um loop para arremessar a moeda 20 vezes.
     // Depois que o seu loop terminar, exiba o resultado na página no formato de TEXTO.
     // Além de exibir os resultados na página, não esqueça
@@ -62,9 +70,14 @@ const coin = {
     // Caso esqueça de retornar "results", sua função não
     // irá passar nos testes.
 }
+//display20Flips();
 
 function display20Images() {
   const results = [];
+  for(let i = 0; i < 20; i++){
+    coin.toHTML();
+  }
+  return coin.toHTML()
   // Use um loop para arremessar a moeda 20 vezes.
   // Depois que o seu loop terminar, exiba o resultado na página no formato de IMAGEM.
   // Além de exibir os resultados na página, não esqueça
