@@ -15,7 +15,6 @@ const coin = {
       }if(this.state == 1){
         chois = "Tails"
       }
-      console.log(chois)
       return chois
       // Se o valor de "state" for 0, retorne "Heads"
       // Se o valor de "state" for 1, retorne "Tails"
@@ -24,11 +23,7 @@ const coin = {
     toHTML: function (toString) {
       const image = document.createElement("img");
       image.src = `./assets/img/${coin.toString()}.png`
-      console.log(coin.toString())
       body.appendChild(image)
-      // Colocar uma imagem correspondente a essa valor.
-      // image.src = "./CAMINHO/IMAGEM.JPEG"
-      // image.alt = "Heads/Tails"
       return this.image;
     },
   };
@@ -39,23 +34,21 @@ const coin = {
     const text = document.createElement("p")
     for(let i = 0; i < 20; i++){
     results.push(texto[`${coin.flip()}`])
-      text.innerHTML= results 
 
       let final = results.toString()
+      text.innerHTML= final 
       body.appendChild(text);
-    //  display20Images();
     }
- //   console.log(results)
     return results
 }
-//display20Flips();
 
 function display20Images() {
   const results = [];
   for(let i = 0; i < 20; i++){
     coin.toHTML();
-    console.log(coin.flip())
-    console.log(coin.toString())
+    coin.flip()
+    coin.toString()
+    results.push(coin.toString())
   }
   return results
 }
